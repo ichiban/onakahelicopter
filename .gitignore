@@ -1,0 +1,4 @@
+*~
+*.db
+*.pid
+.DS_Store

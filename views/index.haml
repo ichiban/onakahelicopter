@@ -1,0 +1,35 @@
+!!!
+/[if lt IE 7 ] <html class="ie ie6" lang="en">
+/[if IE 7 ] <html class="ie ie7" lang="en">
+/[if IE 8 ] <html class="ie ie8" lang="en">
+/ [if (gte IE 9)|!(IE)]><!
+%html{:lang => "ja"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}/
+    %title Totto
+    %meta{:content => "おなかヘリコプターみたいなダジャレをできるだけかぶらないようにツィートする", :name => "description"}/
+    %meta{:content => "@1ban", :name => "author"}/
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %link{:href => url("/css/base.css"), :rel => "stylesheet"}/
+    %link{:href => url("/css/skeleton.css"), :rel => "stylesheet"}/
+    %link{:href => url("/css/layout.css"), :rel => "stylesheet"}/
+    %script{:src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'}
+    %script{:src => url('/js/oh.js')}
+  %body
+    .container
+      .row
+        .eight.columns.offset-by-four.content.clearfix
+          %h1
+            おなかヘリコプター
+          %form{:id => 'status', :method => 'POST', :action => url('/dajare')}
+            %label{:for => 'text'}
+              おなか
+            %input{:id => 'text', :type => 'text', :name => 'text', :placeholder => 'ヘリコプター', :autocomplete => 'off'}
+            = csrf_tag
+            %input{:type => 'submit', :value => '投稿'}
+      .row
+        .six.columns.offset-by-six
+          %ul{:id => 'suggest', :data => {:url => url('/suggest')}}
