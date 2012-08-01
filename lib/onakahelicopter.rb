@@ -1,6 +1,6 @@
 require 'data_mapper'
 require 'sunspot'
-require 'sunspot/data_mapper'
+require 'sunspot_solr'
 
 require 'oh/dajare'
 

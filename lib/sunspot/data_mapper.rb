@@ -1,5 +1,17 @@
 require 'sunspot/rails'
 
+#module Rails
+#  def self.root
+#    File.expand_path(File.dirname(__FILE__))
+#  end
+#  def self.env
+#    'local'
+#  end
+#  def self.logger
+#    nil
+#  end
+#end
+
 module Sunspot
   module DataMapper
     def self.included(base)

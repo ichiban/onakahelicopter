@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__))
-require 'app'
-require 'sunspot_solr'
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
+require 'onakahelicopter'
 require 'sunspot/solr/tasks'
 require 'pp'
 

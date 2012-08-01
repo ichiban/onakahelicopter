@@ -1,7 +1,6 @@
 module OnakaHelicopter
   class Dajare
     include DataMapper::Resource
-    include Sunspot::DataMapper
 
     property :id, Serial
     property :text, String, :required => true, :key => true, :unique => true
