@@ -18,6 +18,8 @@ end
 
 namespace :index do
   task :update do
+    require 'oh/sunspot'
+    
     Sunspot.remove_all
     OnakaHelicopter::Dajare.all.each do |dajare|
       Sunspot.index dajare

@@ -1,5 +1,7 @@
 *~
 *.db
 *.pid
+\#*#
+.#*
 .DS_Store
 lib/sunspot/solr

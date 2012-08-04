@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
 $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
 require 'onakahelicopter'
-require 'sunspot/data_mapper'
 require 'sinatra'
 require 'cgi'
 require 'uri'
 require 'haml'
 require 'json'
 
-module OnakaHelicopter
-  class Dajare
-    include Sunspot::DataMapper
-  end
-end
+require 'oh/sunspot'
 
 configure do
   set :haml, :format => :html5
@@ -71,7 +66,7 @@ get '/suggest' do
   search.results.each do |dajare|
     result[:dajare] << {
       :deta => dajare.deta,
-      :text => dajare.text
+      :text => h(dajare.text)
     }
   end
 
