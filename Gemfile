@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rack", "~> 1.4.1"
+gem "rack", "~> 1.6.13"
 gem "rack_csrf", "~> 2.4.0"
 gem "haml", "~> 3.1.4"
 gem "sinatra", "~> 1.3.2"
